@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:text="Fruits"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fruits" />
+
+    <Button
+        android:text="Vegetables"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/vegetables" />
+
+    <Button
+        android:text="Grains"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/grains" />
+
+    <Button
+        android:text="Protein"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/protein" />
+
+    <Button
+        android:text="Dairy"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dairy" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pyramid"/>
+
+</LinearLayout>

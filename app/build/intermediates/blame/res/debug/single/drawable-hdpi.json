@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon.png",
+        "source": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pyramid.png",
+        "source": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\src\\main\\res\\drawable-hdpi\\pyramid.png"
+    },
+    {
+        "merged": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\yes.png",
+        "source": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\src\\main\\res\\drawable-hdpi\\yes.png"
+    }
+]
