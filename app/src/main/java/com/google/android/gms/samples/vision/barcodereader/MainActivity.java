@@ -45,6 +45,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //getApplicationContext().deleteDatabase("database");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.copy_of_activity_main);
 

@@ -64,12 +64,12 @@
         "source": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_focused.9.png"
     },
     {
-        "merged": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\beef.jpg",
-        "source": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\src\\main\\res\\drawable-hdpi\\beef.jpg"
-    },
-    {
         "merged": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_disabled.9.png",
         "source": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_disabled.9.png"
+    },
+    {
+        "merged": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\beef.jpg",
+        "source": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\src\\main\\res\\drawable-hdpi\\beef.jpg"
     },
     {
         "merged": "C:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",

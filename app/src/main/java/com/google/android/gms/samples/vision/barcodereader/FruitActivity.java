@@ -38,7 +38,7 @@ public class FruitActivity extends ListActivity {
                         R.drawable.banana, 0);
                 insertThing(db, "Apple", "an apple", R.drawable.apple, 0);
                 insertThing(db, "Pear", "a pear", R.drawable.pear, 0);
-                insertThing(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0);
+                insertThing(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0);
             }
             if(flag == 1){
                 //db.replace("FRUIT")

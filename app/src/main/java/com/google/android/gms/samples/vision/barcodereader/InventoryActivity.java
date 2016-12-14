@@ -44,7 +44,7 @@ public class InventoryActivity extends Activity {
                 tableName = "DAIRY";
             }
             Cursor cursor = db.query(tableName,
-                   new String[]{"NAME", "DESCRIPTION", "IMAGE_RESOURCE_ID", "QUANTITY"},
+                   new String[]{"NAME", "DESCRIPTION", "IMAGE_RESOURCE_ID", "QUANTITY", "UPC"},
                    "_id = ?",
                    new String[]{Integer.toString(drinkNo)},
                    null, null, null);
@@ -54,6 +54,8 @@ public class InventoryActivity extends Activity {
                 //Get the drink details from the cursor
                 String nameText = cursor.getString(0);
                 String descriptionText = cursor.getString(3);
+                String upcText = cursor.getString(4);
+
                 int photoId = cursor.getInt(2);
                 //Populate the drink name
                 TextView name = (TextView)findViewById(R.id.name);
@@ -61,6 +63,9 @@ public class InventoryActivity extends Activity {
                 //Populate the drink description
                 TextView description = (TextView)findViewById(R.id.description);
                 description.setText("Quantity:" + descriptionText);
+
+                TextView upc = (TextView) findViewById(R.id.upc);
+                upc.setText("UPC: "+ upcText);
                 //Populate the drink image
                 ImageView photo = (ImageView)findViewById(R.id.photo);
                 photo.setImageResource(photoId);

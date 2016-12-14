@@ -34,7 +34,7 @@ public class DairyActivity extends ListActivity {
                 insertThing(db, "Milk", "Moo", R.drawable.milk, 0);
                 insertThing(db, "Yogurt", "yo",
                         R.drawable.yogurt, 0);
-                insertThing(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0);
+                insertThing(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0);
             }
             if(flag == 1){
                 //db.replace("FRUIT")

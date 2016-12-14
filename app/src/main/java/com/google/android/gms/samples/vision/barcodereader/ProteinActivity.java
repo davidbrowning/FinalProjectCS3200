@@ -29,13 +29,13 @@ public class ProteinActivity extends ListActivity {
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
 
-            int flag = 2;
+            int flag = 1;
             if(flag == 0) {
                 insertThing(db, "Ground Beef", "beef", R.drawable.beef, 0);
                 insertThing(db, "Steak", "yum",
                         R.drawable.steak, 0);
                 insertThing(db, "Chicken", "bwaaaaaaaaaaaaak", R.drawable.chicken, 0);
-                insertThing(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0);
+                insertThing(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0);
             }
             if(flag == 1){
                 //db.replace("FRUIT")

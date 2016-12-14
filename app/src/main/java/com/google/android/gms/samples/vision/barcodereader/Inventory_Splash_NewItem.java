@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 public class Inventory_Splash_NewItem extends Activity implements View.OnClickListener {
 
+    public static final String EXTRA_UPC = "upc";
+
     private Button fruits;
     private Button vegetables;
     private Button grains;
@@ -62,10 +64,11 @@ public class Inventory_Splash_NewItem extends Activity implements View.OnClickLi
             final EditText in = new EditText(this);
             in.setInputType(InputType.TYPE_CLASS_TEXT);
             build.setView(in);
-            build.setPositiveButton("", new DialogInterface.OnClickListener() {
+            build.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     itemName = in.getText().toString();
+                    callInsert("FRUIT");
                 }
             });
             build.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
@@ -83,10 +86,11 @@ public class Inventory_Splash_NewItem extends Activity implements View.OnClickLi
             final EditText in = new EditText(this);
             in.setInputType(InputType.TYPE_CLASS_TEXT);
             build.setView(in);
-            build.setPositiveButton("", new DialogInterface.OnClickListener() {
+            build.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     itemName = in.getText().toString();
+                    callInsert("VEG");
                 }
             });
             build.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
@@ -106,10 +110,11 @@ public class Inventory_Splash_NewItem extends Activity implements View.OnClickLi
             final EditText in = new EditText(this);
             in.setInputType(InputType.TYPE_CLASS_TEXT);
             build.setView(in);
-            build.setPositiveButton("", new DialogInterface.OnClickListener() {
+            build.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     itemName = in.getText().toString();
+                    callInsert("GRAIN");
                 }
             });
             build.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
@@ -127,10 +132,11 @@ public class Inventory_Splash_NewItem extends Activity implements View.OnClickLi
             final EditText in = new EditText(this);
             in.setInputType(InputType.TYPE_CLASS_TEXT);
             build.setView(in);
-            build.setPositiveButton("", new DialogInterface.OnClickListener() {
+            build.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     itemName = in.getText().toString();
+                    callInsert("PROTEIN");
                 }
             });
             build.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
@@ -148,10 +154,11 @@ public class Inventory_Splash_NewItem extends Activity implements View.OnClickLi
             final EditText in = new EditText(this);
             in.setInputType(InputType.TYPE_CLASS_TEXT);
             build.setView(in);
-            build.setPositiveButton("", new DialogInterface.OnClickListener() {
+            build.setPositiveButton("Submit", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     itemName = in.getText().toString();
+                    callInsert("DAIRY");
                 }
             });
             build.setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
@@ -164,30 +171,36 @@ public class Inventory_Splash_NewItem extends Activity implements View.OnClickLi
         }
     }
 
-    private void callInsert(){
+    private void callInsert(String s){
         try {
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
 
-            int flag = 2;
+            int flag = 0;
             if(flag == 0) {
                 // replace the add new item entry with the new entry.
-                insertThing(db, itemName, "an orange", R.drawable.icon, 0);
-                insertThing(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0);
+                db.delete(s,"NAME=?",new String[]{"NEW"});
+                int upc = Integer.parseInt(getIntent().getExtras().getString(EXTRA_UPC));
+                System.out.println("UPC Read: "+upc);
+                insertThing(db, itemName, "Doesn't Matter", R.drawable.icon, 1, upc, s);
+                insertThing(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0, 0000001, s);
             }
         } catch(SQLiteException e) {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
             toast.show();
         }
+        Intent intent = new Intent(Inventory_Splash_NewItem.this, MainActivity.class);
+        startActivity(intent);
     }
 
     private static void insertThing(SQLiteDatabase db, String name,
-                                    String description, int resourceId, int quantity) {
+                                    String description, int resourceId, int quantity, int upc, String table) {
         ContentValues drinkValues = new ContentValues();
         drinkValues.put("NAME", name);
         drinkValues.put("DESCRIPTION", description);
         drinkValues.put("IMAGE_RESOURCE_ID", resourceId);
         drinkValues.put("QUANTITY", quantity);
-        db.insert("FRUIT", null, drinkValues);
+        drinkValues.put("UPC", upc);
+        db.insert(table, null, drinkValues);
     }
 }

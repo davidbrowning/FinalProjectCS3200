@@ -29,13 +29,13 @@ public class GrainActivity extends ListActivity {
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
 
-            int flag = 2;
+            int flag = 1;
             if(flag == 0) {
                 insertThing(db, "Bread", "Bread", R.drawable.bread, 0);
                 insertThing(db, "Cereal", "Cereal",
                         R.drawable.cereal, 0);
                 insertThing(db, "Pasta", "Pasta", R.drawable.pasta, 0);
-                insertThing(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0);
+                insertThing(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0);
             }
             if(flag == 1){
                 //db.replace("FRUIT")

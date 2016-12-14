@@ -30,12 +30,12 @@ public class VegetableActivity extends ListActivity {
             db = starbuzzDatabaseHelper.getReadableDatabase();
 
             int flag = 2;
-            if(flag == 0) {
+            if(flag == 0) { // To programatically add a couple sample items.
                 insertThing(db, "Green Pepper", "a pepper", R.drawable.pepper, 0, 0000010);
                 insertThing(db, "Carrot", "a carrot",
                         R.drawable.carrot, 0, 0000020);
                 insertThing(db, "Tomato", "a tomato", R.drawable.tomato, 0, 0000030);
-                insertThing(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0, 0000040);
+                insertThing(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0, 0000040);
             }
             if(flag == 1){
                 db.delete("VEG",null,null);

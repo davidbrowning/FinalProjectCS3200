@@ -34,6 +34,8 @@ import com.google.android.gms.vision.barcode.Barcode;
 public class BarcodeSetup extends Activity implements View.OnClickListener {
 
     // use a compound button so either checkbox or switch widgets work.
+
+
     private CompoundButton autoFocus;
     private CompoundButton useFlash;
     private TextView statusMessage;
@@ -106,6 +108,9 @@ public class BarcodeSetup extends Activity implements View.OnClickListener {
                     barcodeValue.setText(barcode.displayValue);
                     Log.d(TAG, "Barcode read: " + barcode.displayValue);
                     //need new intent, pick category, give name, ?take picture?
+                    Intent intent = new Intent(BarcodeSetup.this, Inventory_Splash_NewItem.class);
+                    intent.putExtra(Inventory_Splash_NewItem.EXTRA_UPC, barcode.displayValue);
+                    startActivity(intent);
                     //DAVE YOU STILL NEED TO DO THIS PART.
                 } else {
                     statusMessage.setText(R.string.barcode_failure);
