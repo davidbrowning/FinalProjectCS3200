@@ -105,6 +105,8 @@ public class BarcodeSetup extends Activity implements View.OnClickListener {
                     statusMessage.setText(R.string.barcode_success);
                     barcodeValue.setText(barcode.displayValue);
                     Log.d(TAG, "Barcode read: " + barcode.displayValue);
+                    //need new intent, pick category, give name, ?take picture?
+                    //DAVE YOU STILL NEED TO DO THIS PART.
                 } else {
                     statusMessage.setText(R.string.barcode_failure);
                     Log.d(TAG, "No barcode captured, intent data is null");

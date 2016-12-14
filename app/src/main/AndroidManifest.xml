@@ -49,6 +49,8 @@
             android:label="Grain Activity"/>
         <activity android:name=".DairyActivity"
             android:label="Grain Activity"/>
+        <activity android:name=".Inventory_Splash_NewItem"
+            android:label="Add New Item Activity"/>
     </application>
 
 </manifest>

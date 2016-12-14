@@ -46,8 +46,11 @@ class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
         insertFruit(db, "Banana", "a banana",
                 R.drawable.banana, 0, 00000002);
         insertFruit(db, "Apple", "an apple", R.drawable.apple, 0, 00000003);
-        insertFruit(db, "Pear", "a pear", R.drawable.apple, 0, 00000004);
-        insertFruit(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
+        insertFruit(db, "Pear", "a pear", R.drawable.pear, 0, 00000004);
+        insertVeg(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
+        insertGrain(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
+        insertDairy(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
+        insertProtein(db, "Add new item", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

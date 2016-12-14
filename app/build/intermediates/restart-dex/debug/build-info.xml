@@ -1,86 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86_64,x86"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="23"
-    density="420dpi"
+    density="xxxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="82569820038848"
+    timestamp="141049768597183"
     token="-2961990097597272366"
-    verifier="COMPATIBLE" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="165" />
+        duration="2235" />
     <task
         name="instant-run-dex"
-        duration="596" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="42" />
+        duration="1281" />
     <task
         name="verifier"
-        duration="3" />
+        duration="203" />
 
     <artifact
-        location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="81998261329200"
-        verifier="MANIFEST_FILE_CHANGE" >
+        timestamp="141049768597183"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="82305337567537"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\builds\debug\82305337567537\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="82367665544929"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\builds\debug\82367665544929\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="82387501877401"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\builds\debug\82387501877401\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="82449828563278"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="82541376860402"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\builds\debug\82541376860402\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="82556090492477"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\builds\debug\82556090492477\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="82569820038848"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

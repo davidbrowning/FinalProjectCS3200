@@ -108,7 +108,7 @@ public class FruitActivity extends ListActivity {
         }
         else{
             Intent intent = new Intent(FruitActivity.this, BarcodeSetup.class);
-            final int tid = 4;
+            final int tid = 0;
             Bundle bundle = new Bundle();
             bundle.putInt(InventoryActivity.EXTRA_DRINKNO, (int) id);
             bundle.putInt(InventoryActivity.EXTRA_TID, tid);
