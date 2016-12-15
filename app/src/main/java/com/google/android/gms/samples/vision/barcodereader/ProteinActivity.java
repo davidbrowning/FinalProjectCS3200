@@ -29,8 +29,9 @@ public class ProteinActivity extends ListActivity {
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
 
-            int flag = 1;
+            int flag = -1;
             if(flag == 0) {
+                db.delete("PROTEIN","NAME=?",new String[]{"NEW"});
                 insertThing(db, "Ground Beef", "beef", R.drawable.beef, 0);
                 insertThing(db, "Steak", "yum",
                         R.drawable.steak, 0);

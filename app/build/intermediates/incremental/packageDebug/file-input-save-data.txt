@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Dec 14 15:20:11 MST 2016
+#Wed Dec 14 19:06:50 MST 2016
 210.set=ANDROID_RESOURCE
 282.file=C\:\\Users\\David\\Documents\\GitHub\\FinalProjectCS3200\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\design_bottom_sheet_dialog.xml
 14.set=ANDROID_RESOURCE

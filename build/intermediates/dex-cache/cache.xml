@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="8ae63a0096df0c635052718f937d9ee9ce6d0084">
+        sha1="b400f03887237d49ea74091d4deba20b88f25734">
         <dex dex="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_80f52c08f2a1874faf09e46389a45eb05b4a2af9\classes.dex" />
     </item>
     <item
@@ -403,7 +403,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.1"
-        sha1="cae1e10f9c38769137285a55d98cccebb1699aae">
+        sha1="e0fca8bbcd15b69891157de8d0e2924c96a379ce">
         <dex dex="C:\Users\David\Documents\GitHub\FinalProjectCS3200\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_0570a324d88ad7e96499e3cbe4b0ded85549c122\classes.dex" />
     </item>
 

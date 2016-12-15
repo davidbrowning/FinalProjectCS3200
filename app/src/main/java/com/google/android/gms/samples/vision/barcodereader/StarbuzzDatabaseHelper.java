@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
-    private static final String DB_NAME = "databaseFinal"; // the name of our database
+    private static final String DB_NAME = "database2"; // the name of our database
     private static final int DB_VERSION = 2; // the version of the database
     StarbuzzDatabaseHelper(Context context){
         super(context, DB_NAME, null, DB_VERSION);
@@ -17,47 +17,47 @@ class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
                 + "DESCRIPTION TEXT, "
                 + "IMAGE_RESOURCE_ID INTEGER, "
                 + "QUANTITY INTEGER, "
-                + "UPC INTEGER);");
+                + "UPC TEXT);");
         db.execSQL("CREATE TABLE VEG (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "NAME TEXT, "
                 + "DESCRIPTION TEXT, "
                 + "IMAGE_RESOURCE_ID INTEGER, "
                 + "QUANTITY INTEGER, "
-                + "UPC INTEGER);");
+                + "UPC TEXT);");
         db.execSQL("CREATE TABLE GRAIN (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "NAME TEXT, "
                 + "DESCRIPTION TEXT, "
                 + "IMAGE_RESOURCE_ID INTEGER, "
                 + "QUANTITY INTEGER, "
-                + "UPC INTEGER);");
+                + "UPC TEXT);");
         db.execSQL("CREATE TABLE DAIRY (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "NAME TEXT, "
                 + "DESCRIPTION TEXT, "
                 + "IMAGE_RESOURCE_ID INTEGER, "
                 + "QUANTITY INTEGER, "
-                + "UPC INTEGER);");
+                + "UPC TEXT);");
         db.execSQL("CREATE TABLE PROTEIN (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "NAME TEXT, "
                 + "DESCRIPTION TEXT, "
                 + "IMAGE_RESOURCE_ID INTEGER, "
                 + "QUANTITY INTEGER, "
-                + "UPC INTEGER);");
-        insertFruit(db, "Orange", "an orange", R.drawable.orange, 0,00000001);
+                + "UPC TEXT);");
+        insertFruit(db, "Orange", "an orange", R.drawable.orange, 0,"00000005");
         insertFruit(db, "Banana", "a banana",
-                R.drawable.banana, 0, 00000002);
-        insertFruit(db, "Apple", "an apple", R.drawable.apple, 0, 00000003);
-        insertFruit(db, "Pear", "a pear", R.drawable.pear, 0, 00000004);
-        insertFruit(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
-        insertVeg(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
-        insertGrain(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
-        insertDairy(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
-        insertProtein(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,00000005);
+                R.drawable.banana, 0, "00000005");
+        insertFruit(db, "Apple", "an apple", R.drawable.apple, 0, "00000005");
+        insertFruit(db, "Pear", "a pear", R.drawable.pear, 0, "00000005");
+        insertFruit(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,"00000005");
+        insertVeg(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,"00000005");
+        insertGrain(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,"00000005");
+        insertDairy(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,"00000005");
+        insertProtein(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark,0,"00000005");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
     private static void insertFruit(SQLiteDatabase db, String name,
-                                    String description, int resourceId, int quantity, int upc) {
+                                    String description, int resourceId, int quantity, String upc) {
         ContentValues tableValues = new ContentValues();
         tableValues.put("NAME", name);
         tableValues.put("DESCRIPTION", description);
@@ -67,7 +67,7 @@ class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
         db.insert("FRUIT", null, tableValues);
     }
     private static void insertVeg(SQLiteDatabase db, String name,
-                                    String description, int resourceId, int quantity, int upc) {
+                                    String description, int resourceId, int quantity, String upc) {
         ContentValues tableValues = new ContentValues();
         tableValues.put("NAME", name);
         tableValues.put("DESCRIPTION", description);
@@ -77,7 +77,7 @@ class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
         db.insert("VEG", null, tableValues);
     }
     private static void insertGrain(SQLiteDatabase db, String name,
-                                    String description, int resourceId, int quantity, int upc) {
+                                    String description, int resourceId, int quantity, String upc) {
         ContentValues tableValues = new ContentValues();
         tableValues.put("NAME", name);
         tableValues.put("DESCRIPTION", description);
@@ -87,7 +87,7 @@ class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
         db.insert("GRAIN", null, tableValues);
     }
     private static void insertDairy(SQLiteDatabase db, String name,
-                                    String description, int resourceId, int quantity, int upc) {
+                                    String description, int resourceId, int quantity, String upc) {
         ContentValues tableValues = new ContentValues();
         tableValues.put("NAME", name);
         tableValues.put("DESCRIPTION", description);
@@ -97,7 +97,7 @@ class StarbuzzDatabaseHelper extends SQLiteOpenHelper {
         db.insert("DAIRY", null, tableValues);
     }
     private static void insertProtein(SQLiteDatabase db, String name,
-                                    String description, int resourceId, int quantity, int upc) {
+                                    String description, int resourceId, int quantity, String upc) {
         ContentValues tableValues = new ContentValues();
         tableValues.put("NAME", name);
         tableValues.put("DESCRIPTION", description);

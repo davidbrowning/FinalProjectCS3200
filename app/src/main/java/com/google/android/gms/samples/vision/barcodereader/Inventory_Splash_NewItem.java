@@ -180,10 +180,12 @@ public class Inventory_Splash_NewItem extends Activity implements View.OnClickLi
             if(flag == 0) {
                 // replace the add new item entry with the new entry.
                 db.delete(s,"NAME=?",new String[]{"NEW"});
-                int upc = Integer.parseInt(getIntent().getExtras().getString(EXTRA_UPC));
+                String upc = getIntent().getExtras().getString(EXTRA_UPC);
                 System.out.println("UPC Read: "+upc);
-                insertThing(db, itemName, "Doesn't Matter", R.drawable.icon, 1, upc, s);
-                insertThing(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0, 0000001, s);
+                if(!alreadyInInventory(db, upc, s)) {
+                    insertThing(db, itemName, "Doesn't Matter", R.drawable.icon, 1, upc, s);
+                    insertThing(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0, "0000001", s);
+                }
             }
         } catch(SQLiteException e) {
             Toast toast = Toast.makeText(this, "Database unavailable", Toast.LENGTH_SHORT);
@@ -194,7 +196,7 @@ public class Inventory_Splash_NewItem extends Activity implements View.OnClickLi
     }
 
     private static void insertThing(SQLiteDatabase db, String name,
-                                    String description, int resourceId, int quantity, int upc, String table) {
+                                    String description, int resourceId, int quantity, String upc, String table) {
         ContentValues drinkValues = new ContentValues();
         drinkValues.put("NAME", name);
         drinkValues.put("DESCRIPTION", description);
@@ -202,5 +204,22 @@ public class Inventory_Splash_NewItem extends Activity implements View.OnClickLi
         drinkValues.put("QUANTITY", quantity);
         drinkValues.put("UPC", upc);
         db.insert(table, null, drinkValues);
+    }
+
+    private boolean alreadyInInventory(SQLiteDatabase db, String upc, String tableName){
+        Cursor cursor = db.query(tableName,
+                new String[]{"QUANTITY", "UPC"},
+                "UPC = ?",
+                new String[]{upc},
+                null, null, null);
+        System.out.println("UPC: "+upc);
+        try {
+            System.out.println("Cursor Col Names:" + cursor.getColumnNames()[0]);
+            if (cursor.moveToFirst()) {
+                System.out.println(cursor.getString(1)); // <- This will return the value of the upc if it finds it. cursor.getString(0) returns
+                // the quantity. If found, update the quantity to quantity plus one return true;
+            }
+        } catch (Exception e){System.out.println("oops");}
+        return false;
     }
 }

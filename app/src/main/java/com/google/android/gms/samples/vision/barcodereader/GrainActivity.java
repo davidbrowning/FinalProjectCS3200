@@ -29,8 +29,9 @@ public class GrainActivity extends ListActivity {
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
 
-            int flag = 1;
+            int flag = -1;
             if(flag == 0) {
+                db.delete("GRAIN","NAME=?",new String[]{"NEW"});
                 insertThing(db, "Bread", "Bread", R.drawable.bread, 0);
                 insertThing(db, "Cereal", "Cereal",
                         R.drawable.cereal, 0);

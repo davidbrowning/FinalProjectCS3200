@@ -29,8 +29,9 @@ public class VegetableActivity extends ListActivity {
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
 
-            int flag = 2;
+            int flag = -1;
             if(flag == 0) { // To programatically add a couple sample items.
+                db.delete("VEG","NAME=?",new String[]{"NEW"});
                 insertThing(db, "Green Pepper", "a pepper", R.drawable.pepper, 0, 0000010);
                 insertThing(db, "Carrot", "a carrot",
                         R.drawable.carrot, 0, 0000020);
@@ -38,7 +39,7 @@ public class VegetableActivity extends ListActivity {
                 insertThing(db, "NEW", "if desired item doesn't exit", R.drawable.common_google_signin_btn_icon_dark, 0, 0000040);
             }
             if(flag == 1){
-                db.delete("VEG",null,null);
+                //db.delete("VEG",null,null);
             }
 
             cursor = db.query("VEG",

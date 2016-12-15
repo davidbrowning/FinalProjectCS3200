@@ -31,7 +31,7 @@ public class FruitActivity extends ListActivity {
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
 
-            int flag = 2;
+            int flag = -1;
             if(flag == 0) {
                 insertThing(db, "Orange", "an orange", R.drawable.orange, 0);
                 insertThing(db, "Banana", "a banana",

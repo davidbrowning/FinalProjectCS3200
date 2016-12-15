@@ -29,8 +29,9 @@ public class DairyActivity extends ListActivity {
             SQLiteOpenHelper starbuzzDatabaseHelper = new StarbuzzDatabaseHelper(this);
             db = starbuzzDatabaseHelper.getReadableDatabase();
 
-            int flag = 1;
+            int flag = -1;
             if(flag == 0) {
+                db.delete("Dairy","NAME=?",new String[]{"NEW"});
                 insertThing(db, "Milk", "Moo", R.drawable.milk, 0);
                 insertThing(db, "Yogurt", "yo",
                         R.drawable.yogurt, 0);
